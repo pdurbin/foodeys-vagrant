@@ -1,4 +1,6 @@
-# Foodeys Vagrant
+# A Foodeys Vagrant Development Environment
+
+To build and run the Java EE 7 app from https://github.com/JUGCologne/Foodeys in a CentOS virtual machine running NetBeans 7.3 and GlassFish 4:
 
     vagrant up
     vagrant ssh
@@ -9,5 +11,13 @@
     exit
     vagrant halt
     vagrant up
+    ssh vagrant
+    /downloads/glassfish4/bin/asadmin start-database
 
-Once the VM is back up, log in with vagrant/vagrant, start GlassFish in /downloads, launch NetBeans from /downloads, open the Foodeys project, and try a build.
+Then log in to GNOME with vagrant/vagrant and:
+
+- launch NetBeans with `/downloads/netbeans/bin/netbeans`
+- add a GlassFish sever using the path `/downloads/glassfish4`
+- open the Foodeys project
+- click "Resolve" to initiate a priming build 
+- run the project and <http://localhost:8080/Application/> should open
